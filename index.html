@@ -33,36 +33,12 @@ body{font-family:"Geist",sans-serif;background:#FEF9F0;min-height:100vh}
   <h2 style="font-size:24px;font-weight:800;color:#1A1A1A;margin-bottom:6px">Pick a World</h2>
   <p style="color:#888;margin-bottom:20px">Tap any world to see the jobs inside</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-    <button class="btn" onclick="showCat('builders')" style="background:#FFF3E8;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer">
-      <div style="font-size:36px;margin-bottom:8px">🔨</div>
-      <div style="font-size:16px;font-weight:800;color:#E07B00">Builders</div>
-      <div style="font-size:12px;color:#888;margin-top:2px">Make & fix things</div>
-    </button>
-    <button class="btn" onclick="showCat('discoverers')" style="background:#E8F4FF;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer">
-      <div style="font-size:36px;margin-bottom:8px">🔬</div>
-      <div style="font-size:16px;font-weight:800;color:#0066CC">Discoverers</div>
-      <div style="font-size:12px;color:#888;margin-top:2px">Figure things out</div>
-    </button>
-    <button class="btn" onclick="showCat('creators')" style="background:#FFF0F8;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer">
-      <div style="font-size:36px;margin-bottom:8px">🎨</div>
-      <div style="font-size:16px;font-weight:800;color:#CC0066">Creators</div>
-      <div style="font-size:12px;color:#888;margin-top:2px">Make art & design</div>
-    </button>
-    <button class="btn" onclick="showCat('helpers')" style="background:#E8FFF0;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer">
-      <div style="font-size:36px;margin-bottom:8px">🤝</div>
-      <div style="font-size:16px;font-weight:800;color:#00882B">Helpers</div>
-      <div style="font-size:12px;color:#888;margin-top:2px">Care for people</div>
-    </button>
-    <button class="btn" onclick="showCat('leaders')" style="background:#FFFBE8;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer">
-      <div style="font-size:36px;margin-bottom:8px">⭐</div>
-      <div style="font-size:16px;font-weight:800;color:#886600">Leaders</div>
-      <div style="font-size:12px;color:#888;margin-top:2px">Inspire & lead</div>
-    </button>
-    <button class="btn" onclick="showCat('organizers')" style="background:#F0E8FF;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer">
-      <div style="font-size:36px;margin-bottom:8px">📋</div>
-      <div style="font-size:16px;font-weight:800;color:#6600BB">Organizers</div>
-      <div style="font-size:12px;color:#888;margin-top:2px">Plan & organize</div>
-    </button>
+    <button class="btn" onclick="showCat('builders')" style="background:#FFF3E8;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer"><div style="font-size:36px;margin-bottom:8px">🔨</div><div style="font-size:16px;font-weight:800;color:#E07B00">Builders</div><div style="font-size:12px;color:#888;margin-top:2px">Make &amp; fix things</div></button>
+    <button class="btn" onclick="showCat('discoverers')" style="background:#E8F4FF;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer"><div style="font-size:36px;margin-bottom:8px">🔬</div><div style="font-size:16px;font-weight:800;color:#0066CC">Discoverers</div><div style="font-size:12px;color:#888;margin-top:2px">Figure things out</div></button>
+    <button class="btn" onclick="showCat('creators')" style="background:#FFF0F8;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer"><div style="font-size:36px;margin-bottom:8px">🎨</div><div style="font-size:16px;font-weight:800;color:#CC0066">Creators</div><div style="font-size:12px;color:#888;margin-top:2px">Make art &amp; design</div></button>
+    <button class="btn" onclick="showCat('helpers')" style="background:#E8FFF0;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer"><div style="font-size:36px;margin-bottom:8px">🤝</div><div style="font-size:16px;font-weight:800;color:#00882B">Helpers</div><div style="font-size:12px;color:#888;margin-top:2px">Care for people</div></button>
+    <button class="btn" onclick="showCat('leaders')" style="background:#FFFBE8;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer"><div style="font-size:36px;margin-bottom:8px">⭐</div><div style="font-size:16px;font-weight:800;color:#886600">Leaders</div><div style="font-size:12px;color:#888;margin-top:2px">Inspire &amp; lead</div></button>
+    <button class="btn" onclick="showCat('organizers')" style="background:#F0E8FF;border:none;border-radius:20px;padding:20px 16px;text-align:left;cursor:pointer"><div style="font-size:36px;margin-bottom:8px">📋</div><div style="font-size:16px;font-weight:800;color:#6600BB">Organizers</div><div style="font-size:12px;color:#888;margin-top:2px">Plan &amp; organize</div></button>
   </div>
   <button class="back" onclick="show('s-home')" style="margin-top:20px">← Back to Home</button>
 </div>
@@ -71,7 +47,7 @@ body{font-family:"Geist",sans-serif;background:#FEF9F0;min-height:100vh}
 <div id="s-list" class="hidden" style="padding:24px;max-width:580px;margin:0 auto">
   <button class="back" onclick="show('s-categories')">← All Categories</button>
   <div id="list-header" style="margin-bottom:20px"></div>
-  <div id="list-grid" style="display:flex;flex-direction:column;gap:10px"></div>
+  <div id="list-grid"></div>
 </div>
 
 <!-- CAREER DETAIL -->
@@ -82,66 +58,54 @@ body{font-family:"Geist",sans-serif;background:#FEF9F0;min-height:100vh}
 
 <!-- QUIZ Q1 -->
 <div id="s-q1" class="hidden" style="padding:32px 24px;max-width:520px;margin:0 auto">
-  <div style="display:flex;gap:6px;margin-bottom:28px">
-    <div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:6px;flex:1;background:#E8E8E4;border-radius:99px"></div>
-    <div style="height:6px;flex:1;background:#E8E8E4;border-radius:99px"></div>
-  </div>
+  <div style="display:flex;gap:6px;margin-bottom:28px"><div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div><div style="height:6px;flex:1;background:#E8E8E4;border-radius:99px"></div><div style="height:6px;flex:1;background:#E8E8E4;border-radius:99px"></div></div>
   <div style="font-size:48px;margin-bottom:12px">🤔</div>
   <h2 style="font-size:24px;font-weight:800;color:#1A1A1A;margin-bottom:6px">What do you love doing?</h2>
   <p style="color:#888;font-size:14px;margin-bottom:24px">Pick your favourite!</p>
   <div style="display:flex;flex-direction:column;gap:10px">
-    <button class="btn" onclick="q1('builders')" style="background:#FFF3E8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🔨</span>Building and fixing things</button>
+    <button class="btn" onclick="q1('builders')"    style="background:#FFF3E8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🔨</span>Building and fixing things</button>
     <button class="btn" onclick="q1('discoverers')" style="background:#E8F4FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🔬</span>Experiments and figuring things out</button>
-    <button class="btn" onclick="q1('creators')" style="background:#FFF0F8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🎨</span>Drawing, music, or making art</button>
-    <button class="btn" onclick="q1('helpers')" style="background:#E8FFF0;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🤝</span>Helping people and animals</button>
-    <button class="btn" onclick="q1('leaders')" style="background:#FFFBE8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">⭐</span>Being in charge and leading</button>
-    <button class="btn" onclick="q1('organizers')" style="background:#F0E8FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">📋</span>Planning and keeping things neat</button>
+    <button class="btn" onclick="q1('creators')"    style="background:#FFF0F8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🎨</span>Drawing, music, or making art</button>
+    <button class="btn" onclick="q1('helpers')"     style="background:#E8FFF0;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🤝</span>Helping people and animals</button>
+    <button class="btn" onclick="q1('leaders')"     style="background:#FFFBE8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">⭐</span>Being in charge and leading</button>
+    <button class="btn" onclick="q1('organizers')"  style="background:#F0E8FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">📋</span>Planning and keeping things neat</button>
   </div>
   <button class="back" onclick="show('s-home')" style="margin-top:16px">← Back to Home</button>
 </div>
 
 <!-- QUIZ Q2 -->
 <div id="s-q2" class="hidden" style="padding:32px 24px;max-width:520px;margin:0 auto">
-  <div style="display:flex;gap:6px;margin-bottom:28px">
-    <div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:6px;flex:1;background:#E8E8E4;border-radius:99px"></div>
-  </div>
+  <div style="display:flex;gap:6px;margin-bottom:28px"><div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div><div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div><div style="height:6px;flex:1;background:#E8E8E4;border-radius:99px"></div></div>
   <div style="font-size:48px;margin-bottom:12px">🌍</div>
   <h2 style="font-size:24px;font-weight:800;color:#1A1A1A;margin-bottom:6px">Where would you love to work?</h2>
   <p style="color:#888;font-size:14px;margin-bottom:24px">Pick your dream place!</p>
   <div style="display:flex;flex-direction:column;gap:10px">
-    <button class="btn" onclick="q2('builders')" style="background:#FFF3E8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🌳</span>Outside or in a big workshop</button>
+    <button class="btn" onclick="q2('builders')"    style="background:#FFF3E8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🌳</span>Outside or in a big workshop</button>
     <button class="btn" onclick="q2('discoverers')" style="background:#E8F4FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🔭</span>In a lab or on a computer</button>
-    <button class="btn" onclick="q2('creators')" style="background:#FFF0F8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🎭</span>In a studio or on a stage</button>
-    <button class="btn" onclick="q2('helpers')" style="background:#E8FFF0;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🏥</span>With lots of people who need help</button>
-    <button class="btn" onclick="q2('leaders')" style="background:#FFFBE8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🌎</span>Everywhere — I want to travel!</button>
-    <button class="btn" onclick="q2('organizers')" style="background:#F0E8FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🏢</span>In an office with a great team</button>
+    <button class="btn" onclick="q2('creators')"    style="background:#FFF0F8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🎭</span>In a studio or on a stage</button>
+    <button class="btn" onclick="q2('helpers')"     style="background:#E8FFF0;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🏥</span>With lots of people who need help</button>
+    <button class="btn" onclick="q2('leaders')"     style="background:#FFFBE8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🌎</span>Everywhere — I love to travel!</button>
+    <button class="btn" onclick="q2('organizers')"  style="background:#F0E8FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🏢</span>In an office with a great team</button>
   </div>
 </div>
 
 <!-- QUIZ Q3 -->
 <div id="s-q3" class="hidden" style="padding:32px 24px;max-width:520px;margin:0 auto">
-  <div style="display:flex;gap:6px;margin-bottom:28px">
-    <div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-  </div>
+  <div style="display:flex;gap:6px;margin-bottom:28px"><div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div><div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div><div style="height:6px;flex:1;background:#FF6B6B;border-radius:99px"></div></div>
   <div style="font-size:48px;margin-bottom:12px">⚡</div>
   <h2 style="font-size:24px;font-weight:800;color:#1A1A1A;margin-bottom:6px">What is your superpower?</h2>
   <p style="color:#888;font-size:14px;margin-bottom:24px">Almost done!</p>
   <div style="display:flex;flex-direction:column;gap:10px">
-    <button class="btn" onclick="quizResult('builders')" style="background:#FFF3E8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">💪</span>I can fix or build anything</button>
+    <button class="btn" onclick="quizResult('builders')"    style="background:#FFF3E8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">💪</span>I can fix or build anything</button>
     <button class="btn" onclick="quizResult('discoverers')" style="background:#E8F4FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🧠</span>I figure out how things work</button>
-    <button class="btn" onclick="quizResult('creators')" style="background:#FFF0F8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">✨</span>I make beautiful things</button>
-    <button class="btn" onclick="quizResult('helpers')" style="background:#E8FFF0;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">❤️</span>I make people feel better</button>
-    <button class="btn" onclick="quizResult('leaders')" style="background:#FFFBE8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🚀</span>I inspire people to do great things</button>
-    <button class="btn" onclick="quizResult('organizers')" style="background:#F0E8FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">📊</span>I keep everything running smoothly</button>
+    <button class="btn" onclick="quizResult('creators')"    style="background:#FFF0F8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">✨</span>I make beautiful things</button>
+    <button class="btn" onclick="quizResult('helpers')"     style="background:#E8FFF0;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">❤️</span>I make people feel better</button>
+    <button class="btn" onclick="quizResult('leaders')"     style="background:#FFFBE8;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">🚀</span>I inspire people to do great things</button>
+    <button class="btn" onclick="quizResult('organizers')"  style="background:#F0E8FF;border:2px solid transparent;border-radius:16px;padding:14px 18px;text-align:left;font-size:16px;font-weight:600;color:#1A1A1A;display:flex;align-items:center;gap:12px"><span style="font-size:24px">📊</span>I keep everything running smoothly</button>
   </div>
 </div>
 
-<!-- QUIZ RESULT -->
+<!-- RESULT -->
 <div id="s-result" class="hidden" style="padding:24px;max-width:520px;margin:0 auto">
   <div id="result-hero" style="border-radius:24px;padding:28px;text-align:center;margin-bottom:20px">
     <div id="result-emoji" style="font-size:64px;margin-bottom:12px"></div>
@@ -149,7 +113,7 @@ body{font-family:"Geist",sans-serif;background:#FEF9F0;min-height:100vh}
     <p id="result-desc" style="font-size:15px;line-height:1.6;opacity:0.9"></p>
   </div>
   <h3 style="font-size:16px;font-weight:800;color:#1A1A1A;margin-bottom:12px">Jobs you might love:</h3>
-  <div id="result-jobs" style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px"></div>
+  <div id="result-jobs" style="margin-bottom:24px"></div>
   <div style="display:flex;gap:10px">
     <button class="btn" onclick="show('s-q1')" style="flex:1;background:#1A1A1A;color:#fff;border-radius:14px;padding:14px;font-size:15px;font-weight:700">Try Again 🔄</button>
     <button class="btn" onclick="show('s-categories')" style="flex:1;background:#F0E8FF;color:#6600BB;border-radius:14px;padding:14px;font-size:15px;font-weight:700">Explore All 🗺️</button>
@@ -157,130 +121,147 @@ body{font-family:"Geist",sans-serif;background:#FEF9F0;min-height:100vh}
 </div>
 
 <script>
+
 var CATS = {
-  builders:{name:'Builders & Makers',emoji:'🔨',color:'#E07B00',bg:'#FFF3E8',desc:'You love to build, fix, and work with your hands. These jobs are perfect for you!'},
-  discoverers:{name:'Discoverers',emoji:'🔬',color:'#0066CC',bg:'#E8F4FF',desc:'You love figuring out how things work and discovering new things. These jobs need curious minds like yours!'},
-  creators:{name:'Creators',emoji:'🎨',color:'#CC0066',bg:'#FFF0F8',desc:'You love making art, music, and beautiful things. These jobs let your imagination run wild!'},
-  helpers:{name:'Helpers',emoji:'🤝',color:'#00882B',bg:'#E8FFF0',desc:'You love taking care of people and making them feel better. These jobs need big hearts like yours!'},
-  leaders:{name:'Leaders',emoji:'⭐',color:'#886600',bg:'#FFFBE8',desc:'You love being in charge and inspiring others. These jobs need natural leaders like you!'},
-  organizers:{name:'Organizers',emoji:'📋',color:'#6600BB',bg:'#F0E8FF',desc:'You love making plans and keeping things in order. These jobs need organized thinkers like you!'}
+  builders:   {name:"Builders",     emoji:"🔨",color:"#E07B00",bg:"#FFF3E8",desc:"You love building and fixing things!"},
+  discoverers:{name:"Discoverers",  emoji:"🔬",color:"#0066CC",bg:"#E8F4FF",desc:"You love figuring out how things work!"},
+  creators:   {name:"Creators",     emoji:"🎨",color:"#CC0066",bg:"#FFF0F8",desc:"You love making art and beautiful things!"},
+  helpers:    {name:"Helpers",      emoji:"🤝",color:"#00882B",bg:"#E8FFF0",desc:"You love caring for people and animals!"},
+  leaders:    {name:"Leaders",      emoji:"⭐",color:"#886600",bg:"#FFFBE8",desc:"You love being in charge and inspiring others!"},
+  organizers: {name:"Organizers",   emoji:"📋",color:"#6600BB",bg:"#F0E8FF",desc:"You love planning and keeping things in order!"}
 };
 
 var CAREERS = [
-  {id:'wind',cat:'builders',emoji:'🌬️',name:'Wind Turbine Technician',short:'Climb giant wind turbines and fix them so they make clean energy!',detail:'Wind turbine technicians climb turbines that are as tall as a 20-story building! They keep the blades spinning so they can make electricity from the wind. This is one of the fastest growing jobs in America — the future needs you!',future:true,wage:'$62,580/yr'},
-  {id:'solar',cat:'builders',emoji:'☀️',name:'Solar Panel Installer',short:'Put solar panels on rooftops to catch sunlight and turn it into power!',detail:'Solar installers put panels on rooftops and in fields to catch the sun and make electricity. As the world switches to clean energy, solar jobs are growing super fast!',future:true,wage:'$51,860/yr'},
-  {id:'electrician',cat:'builders',emoji:'⚡',name:'Electrician',short:'Wire up homes and buildings so the lights turn on!',detail:'Electricians install and fix all the wires in homes, schools, and factories. Without them, nothing with a plug would work!',future:false,wage:'$61,590/yr'},
-  {id:'firefighter',cat:'builders',emoji:'🚒',name:'Firefighter',short:'Race to emergencies and save people from fires!',detail:'Firefighters put out fires, rescue people, and respond to all kinds of emergencies. They train every day to be ready to help at a moment’s notice.',future:false,wage:'$53,240/yr'},
-  {id:'chef',cat:'builders',emoji:'👨‍🍳',name:'Chef',short:'Create delicious meals that make people happy!',detail:'Chefs design menus and cook amazing food in restaurants, hotels, and even on TV shows. A great meal can make someone’s whole day better!',future:false,wage:'$59,430/yr'},
-  {id:'pilot',cat:'builders',emoji:'✈️',name:'Airline Pilot',short:'Fly giant airplanes full of passengers across the sky!',detail:'Airline pilots fly planes to cities and countries all over the world. They train for years to safely carry hundreds of passengers at once.',future:false,wage:'$171,210/yr'},
-  {id:'datascientist',cat:'discoverers',emoji:'📊',name:'Data Scientist',short:'Find hidden patterns in huge amounts of data to solve problems!',detail:'Data scientists use math and computers to find patterns in information. They help companies make smarter decisions and can even predict the future!',future:true,wage:'$108,020/yr'},
-  {id:'cybersecurity',cat:'discoverers',emoji:'🛡️',name:'Cybersecurity Analyst',short:'Protect computers from hackers and keep information safe!',detail:'Cybersecurity analysts are digital superheroes — they stop hackers from stealing information and keep our computers safe. This job is growing super fast!',future:true,wage:'$120,360/yr'},
-  {id:'developer',cat:'discoverers',emoji:'💻',name:'Software Developer',short:'Write the code that makes apps, games, and websites work!',detail:'Software developers build everything you use on a phone or computer. From games to maps to video calls — a developer built it!',future:true,wage:'$132,270/yr'},
-  {id:'marinebio',cat:'discoverers',emoji:'🐬',name:'Marine Biologist',short:'Study dolphins, sharks, and the amazing animals in the ocean!',detail:'Marine biologists dive underwater and sail the seas to study ocean life. They discover new species and help protect our oceans.',future:false,wage:'$67,760/yr'},
-  {id:'forensic',cat:'discoverers',emoji:'🔍',name:'Forensic Scientist',short:'Help solve mysteries by examining clues at crime scenes!',detail:'Forensic scientists use chemistry and biology to solve crimes — just like in detective shows! They examine fingerprints, DNA, and other clues to find the truth.',future:true,wage:'$63,740/yr'},
-  {id:'robotics',cat:'discoverers',emoji:'🤖',name:'Robotics Engineer',short:'Design and build robots that can do amazing things!',detail:'Robotics engineers build robots that can do surgery, explore Mars, and make cars in factories. As robots get smarter, this job keeps growing!',future:true,wage:'$104,600/yr'},
-  {id:'gamedesigner',cat:'creators',emoji:'🎮',name:'Video Game Designer',short:'Create the worlds, characters, and adventures in video games!',detail:'Video game designers invent entire worlds for people to explore. They decide what the game looks like, how it plays, and what makes it fun. Your favorite games were made by a team of designers!',future:true,wage:'$132,270/yr'},
-  {id:'animator',cat:'creators',emoji:'🎬',name:'Animator',short:'Bring cartoon characters to life by drawing thousands of pictures!',detail:'Animators make characters move by drawing or using computers to create motion. Every Pixar movie, cartoon, and video game character was brought to life by an animator!',future:false,wage:'$106,810/yr'},
-  {id:'architect',cat:'creators',emoji:'🏗️',name:'Architect',short:'Design beautiful buildings — houses, schools, museums, and skyscrapers!',detail:'Architects draw plans for buildings before they get built. They decide how a building looks, how the rooms fit together, and how to make it safe and beautiful.',future:false,wage:'$95,560/yr'},
-  {id:'uxdesigner',cat:'creators',emoji:'📱',name:'UX Designer',short:'Design apps and websites so they are easy and fun to use!',detail:'UX designers decide how apps look and feel. They make sure buttons are easy to find, colors are nice, and everything just works. Every app you love had a UX designer!',future:true,wage:'$103,220/yr'},
-  {id:'fashiondesigner',cat:'creators',emoji:'👗',name:'Fashion Designer',short:'Create clothes, shoes, and accessories that people love to wear!',detail:'Fashion designers sketch outfits and bring them to life with fabric and thread. They show their collections at fashion shows and their clothes end up in stores around the world!',future:false,wage:'$82,820/yr'},
-  {id:'photographer',cat:'creators',emoji:'📸',name:'Photographer',short:'Capture amazing moments and beautiful images with a camera!',detail:'Photographers take pictures at weddings, sports events, and for magazines. Wildlife photographers travel to jungles and oceans to capture animals in their natural homes.',future:false,wage:'$40,760/yr'},
-  {id:'nursepractitioner',cat:'helpers',emoji:'👩‍⚕️',name:'Nurse Practitioner',short:'Diagnose and treat patients — kind of like a doctor!',detail:'Nurse practitioners examine patients, figure out what is wrong, and prescribe medicine to make them better. This is one of the fastest-growing jobs in America!',future:true,wage:'$129,210/yr'},
-  {id:'speechtherapist',cat:'helpers',emoji:'🗣️',name:'Speech Therapist',short:'Help people who have trouble speaking or understanding words!',detail:'Speech therapists help kids and adults who find it hard to talk or swallow. They use games and exercises to strengthen the muscles needed for speech.',future:true,wage:'$89,290/yr'},
-  {id:'occupational',cat:'helpers',emoji:'🙌',name:'Occupational Therapist',short:'Help people learn to do everyday tasks after an injury!',detail:'Occupational therapists help people learn to do everyday things like getting dressed or cooking after an injury or illness. They are incredibly patient and creative helpers!',future:true,wage:'$96,370/yr'},
-  {id:'teacher',cat:'helpers',emoji:'📚',name:'Teacher',short:'Help kids learn, grow, and discover the world!',detail:'Teachers are some of the most important people in the world. They help kids learn to read, do math, and understand history. A great teacher can change a student’s life forever!',future:false,wage:'$65,220/yr'},
-  {id:'vet',cat:'helpers',emoji:'🐾',name:'Veterinarian',short:'Take care of sick and injured animals and help them feel better!',detail:'Veterinarians are doctors for animals — from puppies and kittens to horses and zoo animals. They diagnose illnesses, perform surgeries, and give animals their vaccinations.',future:false,wage:'$119,100/yr'},
-  {id:'socialworker',cat:'helpers',emoji:'🏡',name:'Social Worker',short:'Help families and children who are going through tough times!',detail:'Social workers connect families with food, housing, and healthcare. They make sure children are safe and help people through difficult times. This job requires a big heart!',future:true,wage:'$58,380/yr'},
-  {id:'healthmanager',cat:'leaders',emoji:'🏥',name:'Health Services Manager',short:'Run hospitals and clinics so everything works perfectly!',detail:'Health services managers keep hospitals and clinics running. They manage staff, budgets, and make sure patients get excellent care. This is one of the fastest-growing leadership jobs!',future:true,wage:'$110,680/yr'},
-  {id:'entrepreneur',cat:'leaders',emoji:'💡',name:'Entrepreneur',short:'Start your own business and turn your ideas into something real!',detail:'Entrepreneurs see a problem and create a business to solve it. They build teams, raise money, and work hard to make their dream a reality. Every big company started with one person’s idea!',future:false,wage:'Varies'},
-  {id:'coach',cat:'leaders',emoji:'🏆',name:'Sports Coach',short:'Train athletes and help your team win together!',detail:'Sports coaches teach players skills, develop game strategies, and motivate teams to give their best. Whether it’s soccer, basketball, or swimming, great coaches make great champions!',future:false,wage:'$48,140/yr'},
-  {id:'lawyer',cat:'leaders',emoji:'⚖️',name:'Lawyer',short:'Stand up for people in court and make sure justice is served!',detail:'Lawyers defend people in court, write legal documents, and make sure everyone’s rights are protected. Some lawyers fight for the environment, some help families, and some even work in space law!',future:false,wage:'$145,760/yr'},
-  {id:'marketingmanager',cat:'leaders',emoji:'📣',name:'Marketing Manager',short:'Come up with clever ways to tell people about amazing products!',detail:'Marketing managers figure out how to tell the world about products and services. They create ad campaigns, use social media, and find creative ways to get people excited.',future:false,wage:'$156,580/yr'},
-  {id:'emergency',cat:'leaders',emoji:'🚨',name:'Emergency Manager',short:'Plan how cities prepare for disasters like floods and hurricanes!',detail:'Emergency managers plan for hurricanes, earthquakes, and other disasters before they happen. When disaster strikes, they coordinate the response to keep people safe.',future:false,wage:'$81,690/yr'},
-  {id:'financialplanner',cat:'organizers',emoji:'💰',name:'Financial Planner',short:'Help families save money and plan for their future!',detail:'Financial planners help people figure out how to save for college, retirement, or a house. They turn confusing money questions into simple plans!',future:false,wage:'$99,580/yr'},
-  {id:'urbanplanner',cat:'organizers',emoji:'🏙️',name:'Urban Planner',short:'Design the layout of cities — where roads, parks, and buildings go!',detail:'Urban planners decide where buildings, parks, roads, and public transportation go in a city. They shape communities for thousands of people to live in!',future:false,wage:'$81,800/yr'},
-  {id:'logisticsmgr',cat:'organizers',emoji:'📦',name:'Logistics Manager',short:'Make sure products get from factories to stores on time!',detail:'Logistics managers figure out the fastest and cheapest way to move products around the world. Every package that arrives on time did so because of a logistics manager!',future:false,wage:'$103,380/yr'},
-  {id:'databaseadmin',cat:'organizers',emoji:'🗄️',name:'Database Administrator',short:'Organize and protect the huge amounts of data that companies use!',detail:'Database administrators organize millions of pieces of information so companies can find what they need instantly. They also protect data from getting lost or hacked.',future:false,wage:'$112,120/yr'},
-  {id:'accountant',cat:'organizers',emoji:'🧮',name:'Accountant',short:'Track money for businesses and make sure everything adds up!',detail:'Accountants keep track of money coming in and going out of businesses. They help companies stay healthy financially and make sure taxes are done correctly.',future:false,wage:'$79,880/yr'},
-  {id:'hrmanager',cat:'organizers',emoji:'🤜',name:'HR Manager',short:'Help companies hire great people and make sure everyone is happy at work!',detail:'Human resources managers hire employees, solve workplace problems, and make sure everyone follows fair rules. They are the glue that holds a company together!',future:false,wage:'$136,350/yr'}
+  {id:"wind",   cat:"builders",   emoji:"🌬️",name:"Wind Turbine Tech", short:"Fix giant wind turbines that make clean energy!",          detail:"Wind turbine technicians climb turbines as tall as a 20-story building and keep them spinning to make electricity. One of the fastest-growing jobs in America!",      future:true, wage:"$62,580/yr"},
+  {id:"solar",  cat:"builders",   emoji:"☀️",name:"Solar Installer",   short:"Put solar panels on rooftops to catch sunlight!",          detail:"Solar installers put panels on rooftops and fields to turn sunlight into electricity. As the world goes green, solar jobs are booming!",                            future:true, wage:"$51,860/yr"},
+  {id:"elec",   cat:"builders",   emoji:"⚡",name:"Electrician",       short:"Wire up homes so the lights turn on!",                    detail:"Electricians install and fix all the wires in homes, schools, and buildings. Without them nothing with a plug would work!",                                     future:false,wage:"$61,590/yr"},
+  {id:"fire",   cat:"builders",   emoji:"🚒",name:"Firefighter",       short:"Race to emergencies and save people!",                    detail:"Firefighters put out fires and rescue people. They train every single day so they are ready to help in an instant.",                                           future:false,wage:"$53,240/yr"},
+  {id:"chef",   cat:"builders",   emoji:"👨‍🍳",name:"Chef",             short:"Create amazing meals that make people happy!",            detail:"Chefs design menus and cook incredible food in restaurants and on TV shows. A great meal can make someone's whole day better!",                               future:false,wage:"$59,430/yr"},
+  {id:"pilot",  cat:"builders",   emoji:"✈️",name:"Airline Pilot",     short:"Fly giant planes full of passengers!",                   detail:"Airline pilots fly planes to cities all over the world. They train for years to safely carry hundreds of passengers at once.",                                 future:false,wage:"$171,210/yr"},
+  {id:"data",   cat:"discoverers",emoji:"📊",name:"Data Scientist",    short:"Find hidden patterns in huge amounts of data!",           detail:"Data scientists use math and computers to find patterns and help companies make smarter decisions. This job is growing super fast!",                          future:true, wage:"$108,020/yr"},
+  {id:"cyber",  cat:"discoverers",emoji:"🛡️",name:"Cybersecurity Analyst",short:"Protect computers from hackers!",                    detail:"Cybersecurity analysts are digital superheroes who stop hackers and keep our computers safe. One of the fastest-growing jobs in tech!",                           future:true, wage:"$120,360/yr"},
+  {id:"dev",    cat:"discoverers",emoji:"💻",name:"Software Developer", short:"Write code that makes apps and games work!",             detail:"Software developers build everything you use on a phone or computer. From games to maps to video calls — a developer built it!",                               future:true, wage:"$132,270/yr"},
+  {id:"marine", cat:"discoverers",emoji:"🐬",name:"Marine Biologist",  short:"Study dolphins and amazing ocean animals!",              detail:"Marine biologists dive underwater and sail the seas to study ocean life. They discover new species and help protect our oceans.",                               future:false,wage:"$67,760/yr"},
+  {id:"forensic",cat:"discoverers",emoji:"🔍",name:"Forensic Scientist",short:"Use science to solve mysteries and crimes!",            detail:"Forensic scientists examine fingerprints, DNA, and clues to help solve crimes. Just like in detective shows, but in real life!",                                 future:true, wage:"$63,740/yr"},
+  {id:"robot",  cat:"discoverers",emoji:"🤖",name:"Robotics Engineer", short:"Design and build robots that do amazing things!",         detail:"Robotics engineers build robots that perform surgery, explore Mars, and make cars. As robots get smarter, this job keeps growing!",                             future:true, wage:"$104,600/yr"},
+  {id:"game",   cat:"creators",   emoji:"🎮",name:"Game Designer",     short:"Create the worlds and adventures in video games!",        detail:"Game designers invent entire worlds for people to explore. Your favorite games were made by a team of passionate designers!",                                  future:true, wage:"$132,270/yr"},
+  {id:"anim",   cat:"creators",   emoji:"🎬",name:"Animator",          short:"Bring cartoon characters to life!",                      detail:"Animators make characters move by drawing or using computers. Every Pixar movie and cartoon character was brought to life by an animator!",                 future:false,wage:"$106,810/yr"},
+  {id:"arch",   cat:"creators",   emoji:"🏗️",name:"Architect",         short:"Design beautiful buildings and skyscrapers!",             detail:"Architects draw plans for buildings before they are built. They decide how a building looks, how rooms fit, and how to make it beautiful.",               future:false,wage:"$95,560/yr"},
+  {id:"ux",     cat:"creators",   emoji:"📱",name:"UX Designer",       short:"Design apps so they are easy and fun to use!",            detail:"UX designers decide how apps look and feel. Every app you love had a UX designer who made sure the buttons were easy to find!",                            future:true, wage:"$103,220/yr"},
+  {id:"fashion",cat:"creators",   emoji:"👗",name:"Fashion Designer",  short:"Create clothes that people love to wear!",               detail:"Fashion designers sketch outfits and bring them to life with fabric and thread. Their collections end up in stores around the world!",                     future:false,wage:"$82,820/yr"},
+  {id:"photo",  cat:"creators",   emoji:"📸",name:"Photographer",      short:"Capture amazing moments with a camera!",                 detail:"Photographers take pictures at weddings, sports events, and for magazines. Wildlife photographers travel to jungles to capture animals!",                 future:false,wage:"$40,760/yr"},
+  {id:"np",     cat:"helpers",    emoji:"👩‍⚕️",name:"Nurse Practitioner",short:"Diagnose and treat patients just like a doctor!",       detail:"Nurse practitioners examine patients, figure out what is wrong, and prescribe medicine to make them better. One of the fastest-growing jobs!",             future:true, wage:"$129,210/yr"},
+  {id:"speech", cat:"helpers",    emoji:"🗣️",name:"Speech Therapist",  short:"Help people who have trouble speaking!",                 detail:"Speech therapists help kids and adults learn to talk clearly using fun games and exercises. They are incredibly patient and caring!",                     future:true, wage:"$89,290/yr"},
+  {id:"ot",     cat:"helpers",    emoji:"🙌",name:"Occupational Therapist",short:"Help people learn everyday skills after an injury!", detail:"Occupational therapists help people learn to do everyday things like getting dressed or cooking after an injury. Super creative helpers!",               future:true, wage:"$96,370/yr"},
+  {id:"teach",  cat:"helpers",    emoji:"📚",name:"Teacher",            short:"Help kids learn and discover the world!",                detail:"Teachers help kids read, do math, and understand history. A great teacher can change a student's life forever — one of the world's most important jobs!", future:false,wage:"$65,220/yr"},
+  {id:"vet",    cat:"helpers",    emoji:"🐾",name:"Veterinarian",       short:"Take care of sick and injured animals!",                 detail:"Veterinarians are doctors for animals — from puppies to zoo animals. They diagnose illnesses, do surgeries, and keep animals healthy!",               future:false,wage:"$119,100/yr"},
+  {id:"sw",     cat:"helpers",    emoji:"🏡",name:"Social Worker",      short:"Help families going through tough times!",               detail:"Social workers connect families with food, housing, and help. They make sure children are safe and supported through hard times.",                        future:true, wage:"$58,380/yr"},
+  {id:"hldr",   cat:"leaders",    emoji:"🏥",name:"Health Manager",     short:"Run hospitals so everything works perfectly!",           detail:"Health managers keep hospitals and clinics running. They manage staff and budgets to make sure patients get excellent care. Growing fast!",             future:true, wage:"$110,680/yr"},
+  {id:"entre",  cat:"leaders",    emoji:"💡",name:"Entrepreneur",       short:"Start your own business and make your ideas real!",      detail:"Entrepreneurs see a problem and build a business to solve it. Every big company started with one person who believed in their dream!",                   future:false,wage:"Varies"},
+  {id:"coach",  cat:"leaders",    emoji:"🏆",name:"Sports Coach",       short:"Train athletes and help your team win!",                 detail:"Sports coaches teach skills, develop strategies, and motivate teams. Great coaches make great champions in soccer, basketball, and more!",             future:false,wage:"$48,140/yr"},
+  {id:"lawyer", cat:"leaders",    emoji:"⚖️",name:"Lawyer",             short:"Stand up for people and make sure justice is served!",   detail:"Lawyers defend people in court and protect everyone's rights. Some fight for the environment, some help families, some even work in space law!",       future:false,wage:"$145,760/yr"},
+  {id:"mktg",   cat:"leaders",    emoji:"📣",name:"Marketing Manager",  short:"Come up with clever ways to tell people about products!",detail:"Marketing managers create campaigns and use social media to get people excited about products. Storytelling meets strategy!",                        future:false,wage:"$156,580/yr"},
+  {id:"em",     cat:"leaders",    emoji:"🚨",name:"Emergency Manager",  short:"Plan how cities prepare for disasters!",                 detail:"Emergency managers plan for hurricanes and earthquakes before they happen. When disaster strikes, they coordinate the response to keep people safe.",    future:false,wage:"$81,690/yr"},
+  {id:"fin",    cat:"organizers", emoji:"💰",name:"Financial Planner",  short:"Help families save money and plan for the future!",      detail:"Financial planners help people figure out how to save for college, a house, or retirement. They turn confusing money questions into simple plans!",      future:false,wage:"$99,580/yr"},
+  {id:"urban",  cat:"organizers", emoji:"🏙️",name:"Urban Planner",      short:"Design the layout of cities!",                          detail:"Urban planners decide where buildings, parks, and roads go in a city. They shape communities where thousands of people live and grow up!",              future:false,wage:"$81,800/yr"},
+  {id:"log",    cat:"organizers", emoji:"📦",name:"Logistics Manager",  short:"Make sure packages get where they need to go!",          detail:"Logistics managers figure out the fastest way to move products around the world. Every package that arrives on time happened because of them!",          future:false,wage:"$103,380/yr"},
+  {id:"dba",    cat:"organizers", emoji:"🗄️",name:"Database Admin",     short:"Organize and protect huge amounts of information!",      detail:"Database administrators organize millions of pieces of data so companies can find what they need in seconds. They also keep data safe from hackers!",     future:false,wage:"$112,120/yr"},
+  {id:"acct",   cat:"organizers", emoji:"🧮",name:"Accountant",         short:"Track money and make sure everything adds up!",          detail:"Accountants keep track of money coming in and going out of businesses. They help companies stay healthy and make sure taxes are done right!",           future:false,wage:"$79,880/yr"},
+  {id:"hr",     cat:"organizers", emoji:"🤜",name:"HR Manager",         short:"Help companies hire great people!",                      detail:"Human resources managers hire employees and make sure everyone follows fair rules. They are the glue that holds a company together!",               future:false,wage:"$136,350/yr"}
 ];
 
 var _q1, _q2;
 
 function show(id) {
-  ['s-home','s-categories','s-list','s-detail','s-q1','s-q2','s-q3','s-result'].forEach(function(s) {
+  ["s-home","s-categories","s-list","s-detail","s-q1","s-q2","s-q3","s-result"].forEach(function(s) {
     var el = document.getElementById(s);
-    if (el) el.classList.add('hidden');
+    if (el) el.classList.add("hidden");
   });
-  document.getElementById(id).classList.remove('hidden');
-  window.scrollTo(0, 0);
+  document.getElementById(id).classList.remove("hidden");
+  window.scrollTo(0,0);
 }
 
 function showCat(cat) {
   var c = CATS[cat];
-  document.getElementById('list-header').innerHTML =
-    '<div style="display:flex;align-items:center;gap:12px;padding:16px 20px;background:'+c.bg+';border-radius:16px;margin-bottom:4px">' +
-    '<span style="font-size:36px">'+c.emoji+'</span>' +
-    '<div><div style="font-size:20px;font-weight:800;color:'+c.color+'">'+c.name+'</div>' +
+  document.getElementById("list-header").innerHTML =
+    '<div style="display:flex;align-items:center;gap:12px;padding:16px 20px;background:' + c.bg + ';border-radius:16px;margin-bottom:4px">' +
+    '<span style="font-size:36px">' + c.emoji + '</span>' +
+    '<div><div style="font-size:20px;font-weight:800;color:' + c.color + '">' + c.name + '</div>' +
     '<div style="font-size:13px;color:#888">Tap any job to learn more</div></div></div>';
-  var careers = CAREERS.filter(function(c2) { return c2.cat === cat; });
-  document.getElementById('list-grid').innerHTML = careers.map(function(job) {
-    return '<button class="btn" onclick="showDetail(''+job.id+'')" style="background:#fff;border:1px solid #E8E8E4;border-radius:14px;padding:16px;text-align:left;display:flex;align-items:center;gap:14px;cursor:pointer">' +
-      '<span style="font-size:32px;flex-shrink:0">'+job.emoji+'</span>' +
+
+  var grid = document.getElementById("list-grid");
+  grid.innerHTML = "";
+  CAREERS.filter(function(j) { return j.cat === cat; }).forEach(function(job) {
+    var btn = document.createElement("button");
+    btn.className = "btn";
+    btn.style.cssText = "background:#fff;border:1px solid #E8E8E4;border-radius:14px;padding:16px;text-align:left;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;margin-bottom:8px";
+    btn.innerHTML = '<span style="font-size:32px;flex-shrink:0">' + job.emoji + '</span>' +
       '<div style="flex:1;min-width:0">' +
       '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">' +
-      '<span style="font-size:15px;font-weight:700;color:#1A1A1A">'+job.name+'</span>' +
-      (job.future ? '<span style="font-size:10px;font-weight:700;background:#FFD93D;color:#664400;padding:2px 7px;border-radius:99px">FUTURE JOB ⭐</span>' : '') +
-      '</div>' +
-      '<div style="font-size:13px;color:#888;margin-top:3px">'+job.short+'</div></div></button>';
-  }).join('');
-  show('s-list');
-  document.getElementById('detail-back').onclick = function() { showCat(cat); };
+      '<span style="font-size:15px;font-weight:700;color:#1A1A1A">' + job.name + '</span>' +
+      (job.future ? '<span style="font-size:10px;font-weight:700;background:#FFD93D;color:#664400;padding:2px 7px;border-radius:99px">FUTURE JOB ⭐</span>' : "") +
+      '</div><div style="font-size:13px;color:#888;margin-top:3px">' + job.short + '</div></div>';
+    btn.setAttribute("data-jobid", job.id);
+    btn.addEventListener("click", function() { showDetail(this.getAttribute("data-jobid")); });
+    grid.appendChild(btn);
+  });
+
+  show("s-list");
+  document.getElementById("detail-back").onclick = function() { showCat(cat); };
 }
 
 function showDetail(id) {
-  var job = CAREERS.find(function(c) { return c.id === id; });
+  var job = CAREERS.find(function(j) { return j.id === id; });
+  if (!job) return;
   var cat = CATS[job.cat];
-  document.getElementById('detail-content').innerHTML =
-    '<div style="background:'+cat.bg+';border-radius:20px;padding:24px;text-align:center;margin-bottom:20px">' +
-    '<div style="font-size:64px;margin-bottom:12px">'+job.emoji+'</div>' +
-    (job.future ? '<div style="background:#FFD93D;color:#664400;display:inline-block;padding:4px 14px;border-radius:99px;font-size:12px;font-weight:700;margin-bottom:10px">⭐ FUTURE JOB — Growing Fast!</div>' : '') +
-    '<h2 style="font-size:24px;font-weight:900;color:'+cat.color+';margin-bottom:8px">'+job.name+'</h2>' +
-    '<p style="font-size:15px;color:'+cat.color+';opacity:0.85;line-height:1.6">'+job.detail+'</p></div>' +
+  document.getElementById("detail-content").innerHTML =
+    '<div style="background:' + cat.bg + ';border-radius:20px;padding:24px;text-align:center;margin-bottom:20px">' +
+    '<div style="font-size:64px;margin-bottom:12px">' + job.emoji + '</div>' +
+    (job.future ? '<div style="background:#FFD93D;color:#664400;display:inline-block;padding:4px 14px;border-radius:99px;font-size:12px;font-weight:700;margin-bottom:10px">⭐ FUTURE JOB — Growing Fast!</div>' : "") +
+    '<h2 style="font-size:24px;font-weight:900;color:' + cat.color + ';margin-bottom:8px">' + job.name + '</h2>' +
+    '<p style="font-size:15px;color:' + cat.color + ';opacity:0.85;line-height:1.6">' + job.detail + '</p></div>' +
     '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">' +
     '<div style="background:#F8F8F6;border-radius:12px;padding:14px;text-align:center">' +
     '<div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#A0A0A0;margin-bottom:4px">Category</div>' +
-    '<div style="font-size:15px;font-weight:700;color:#1A1A1A">'+cat.emoji+' '+cat.name+'</div></div>' +
+    '<div style="font-size:15px;font-weight:700">' + cat.emoji + ' ' + cat.name + '</div></div>' +
     '<div style="background:#F8F8F6;border-radius:12px;padding:14px;text-align:center">' +
     '<div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#A0A0A0;margin-bottom:4px">Avg Salary</div>' +
-    '<div style="font-size:15px;font-weight:700;color:#1A1A1A">'+job.wage+'</div></div></div>' +
-    '<button class="btn" onclick="show('s-categories')" style="width:100%;background:#1A1A1A;color:#fff;border-radius:14px;padding:14px;font-size:15px;font-weight:700">Explore More Jobs 🗺️</button>';
-  show('s-detail');
+    '<div style="font-size:15px;font-weight:700">' + job.wage + '</div></div></div>' +
+    '<button class="btn" onclick="show(\'s-categories\')" style="width:100%;background:#1A1A1A;color:#fff;border-radius:14px;padding:14px;font-size:15px;font-weight:700">Explore More Jobs ✨</button>';
+  show("s-detail");
 }
 
-function q1(cat) { _q1 = cat; show('s-q2'); }
-function q2(cat) { _q2 = cat; show('s-q3'); }
+function q1(cat) { _q1 = cat; show("s-q2"); }
+function q2(cat) { _q2 = cat; show("s-q3"); }
 
 function quizResult(cat) {
   var scores = {};
-  [_q1, _q2, cat].forEach(function(c) { if(c) scores[c] = (scores[c]||0) + 1; });
-  var winner = Object.keys(scores).reduce(function(a,b) { return scores[a]>=scores[b]?a:b; });
+  [_q1, _q2, cat].forEach(function(c) { if (c) scores[c] = (scores[c] || 0) + 1; });
+  var winner = Object.keys(scores).reduce(function(a, b) { return scores[a] >= scores[b] ? a : b; });
   var c = CATS[winner];
-  var jobs = CAREERS.filter(function(j) { return j.cat === winner; }).slice(0,3);
-  document.getElementById('result-hero').style.background = c.bg;
-  document.getElementById('result-emoji').textContent = c.emoji;
-  document.getElementById('result-title').textContent = 'You’re a '+c.name.split(' ')[0]+'!';
-  document.getElementById('result-title').style.color = c.color;
-  document.getElementById('result-desc').textContent = c.desc;
-  document.getElementById('result-desc').style.color = c.color;
-  document.getElementById('result-jobs').innerHTML = jobs.map(function(job) {
-    return '<div style="background:#fff;border:1px solid #E8E8E4;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px">' +
-      '<span style="font-size:28px">'+job.emoji+'</span>' +
-      '<div><div style="font-size:15px;font-weight:700;color:#1A1A1A">'+job.name+'</div>' +
-      '<div style="font-size:12px;color:#888;margin-top:2px">'+job.short+'</div></div></div>';
-  }).join('');
-  show('s-result');
+  var jobs = CAREERS.filter(function(j) { return j.cat === winner; }).slice(0, 3);
+
+  document.getElementById("result-hero").style.background = c.bg;
+  document.getElementById("result-emoji").textContent = c.emoji;
+  document.getElementById("result-title").textContent = "You are a " + c.name.replace("&","and") + "!";
+  document.getElementById("result-title").style.color = c.color;
+  document.getElementById("result-desc").textContent = c.desc;
+  document.getElementById("result-desc").style.color = c.color;
+
+  var rjobs = document.getElementById("result-jobs");
+  rjobs.innerHTML = "";
+  jobs.forEach(function(job) {
+    var div = document.createElement("div");
+    div.style.cssText = "background:#fff;border:1px solid #E8E8E4;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;margin-bottom:10px";
+    div.innerHTML = '<span style="font-size:28px">' + job.emoji + '</span>' +
+      '<div><div style="font-size:15px;font-weight:700;color:#1A1A1A">' + job.name + '</div>' +
+      '<div style="font-size:12px;color:#888;margin-top:2px">' + job.short + '</div></div>';
+    rjobs.appendChild(div);
+  });
+  show("s-result");
 }
+
+console.log("JS OK — show:", typeof show, "showCat:", typeof showCat, "quizResult:", typeof quizResult);
 </script>
 </body>
 </html>
