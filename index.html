@@ -202,6 +202,9 @@ function showDetail(jobId) {
     '<div style="background:#F8F8F6;border-radius:12px;padding:14px;text-align:center">' +
     '<div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#A0A0A0;margin-bottom:4px">Avg Salary</div>' +
     '<div style="font-size:15px;font-weight:700">' + (job.wage || "Varies") + '</div></div></div>' +
+    '<div style="background:#F8F8F6;border-radius:12px;padding:14px;text-align:center;margin-bottom:12px">' +
+    '<div style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#A0A0A0;margin-bottom:4px">Education Required</div>' +
+    '<div style="font-size:15px;font-weight:700">' + (job.education || "Not Specified") + '</div></div>' +
     richSections +
     '<button class="btn" id="detail-explore-more" style="width:100%;background:#1A1A1A;color:#fff;border-radius:14px;padding:14px;font-size:15px;font-weight:700;margin-top:4px">Explore More Jobs</button>';
 
