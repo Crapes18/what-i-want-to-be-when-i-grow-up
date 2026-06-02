@@ -12,20 +12,19 @@ body{font-family:"Geist",sans-serif;background:#FEF9F0;min-height:100vh}
 .btn{border:none;cursor:pointer;font-family:inherit;transition:transform 0.1s}
 .btn:active{transform:scale(0.97)}
 .back{background:none;border:none;color:#888;font-size:15px;cursor:pointer;padding:8px 0;display:flex;align-items:center;gap:6px;font-family:inherit;margin-bottom:16px}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 </style>
 </head>
 <body>
 
 <!-- HOME -->
-<div id="s-home">
-  <div style="background:linear-gradient(160deg,#FF6B6B,#FF8E53,#FFD93D);padding:40px 24px 48px;text-align:center">
-    <div style="font-size:72px;margin-bottom:12px">🌟</div>
-    <h1 style="color:#fff;font-size:34px;font-weight:900;letter-spacing:-1px;margin-bottom:10px">What Do You Want to Be?</h1>
-    <p style="color:rgba(255,255,255,0.92);font-size:17px;margin-bottom:32px">Explore 36 amazing jobs — or take the quiz to find your match!</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <button class="btn" onclick="show('s-categories')" style="background:#fff;color:#FF6B6B;border-radius:99px;padding:16px 32px;font-size:17px;font-weight:800;box-shadow:0 4px 20px rgba(0,0,0,0.15)">Explore Jobs 🗺️</button>
-      <button class="btn" onclick="show('s-q1')" style="background:rgba(255,255,255,0.2);color:#fff;border:2px solid rgba(255,255,255,0.6);border-radius:99px;padding:16px 32px;font-size:17px;font-weight:800">Take the Quiz ✨</button>
-    </div>
+<div id="s-home" style="min-height:100vh;background:linear-gradient(160deg,#FF6B6B 0%,#FF8E53 40%,#FFD93D 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center">
+  <div style="font-size:80px;margin-bottom:16px;animation:bounce 2s infinite">🌟</div>
+  <h1 style="color:#fff;font-size:38px;font-weight:900;letter-spacing:-1px;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,0.15)">What do you want to be?</h1>
+  <p style="color:rgba(255,255,255,0.92);font-size:18px;margin-bottom:40px;max-width:360px;line-height:1.5">Explore 36 amazing jobs or answer 3 fun questions to find your match!</p>
+  <div style="display:flex;flex-direction:column;gap:14px;width:100%;max-width:320px">
+    <button class="btn" onclick="show('s-q1')" style="background:#fff;color:#FF6B6B;border:none;border-radius:99px;padding:18px 44px;font-size:20px;font-weight:800;box-shadow:0 8px 32px rgba(0,0,0,0.15)">Take the Quiz! ✨</button>
+    <button class="btn" onclick="show('s-categories')" style="background:rgba(255,255,255,0.2);color:#fff;border:2px solid rgba(255,255,255,0.7);border-radius:99px;padding:16px 44px;font-size:17px;font-weight:700">Explore All Jobs 🗺️</button>
   </div>
 </div>
 
