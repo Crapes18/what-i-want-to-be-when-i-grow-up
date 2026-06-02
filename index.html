@@ -3,143 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dream Job Explorer 🌟</title>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<title>What I Want To Be — Career Explorer for Kids</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Geist",sans-serif;background:#FEF9F0;min-height:100vh;overflow-x:hidden}
-.btn{border:none;cursor:pointer;font-family:inherit;transition:transform 0.1s,opacity 0.1s}
-.btn:active{transform:scale(0.97)}
-.hidden{display:none!important}
-.ans-btn{width:100%;background:#fff;border:3px solid transparent;border-radius:18px;padding:16px 20px;text-align:left;font-size:17px;font-weight:600;cursor:pointer;color:#1A1A1A;display:flex;align-items:center;gap:14px;transition:all 0.15s;font-family:inherit}
-.ans-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1)}
-.ans-btn.selected{border-color:#FF6B6B;background:#FFF0F0}
+body{font-family:'Geist',sans-serif;background:#FFFFFF;color:#1A1A1A;min-height:100vh}
+.badge-future{background:linear-gradient(135deg,#7C3AED,#4F46E5);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
+.btn{cursor:pointer;border:none;font-family:'Geist',sans-serif;font-weight:700;border-radius:16px;transition:transform .15s,opacity .15s}
+.btn:hover{transform:scale(1.03);opacity:.92}
+.btn:active{transform:scale(.97)}
+scrollbar-width:thin;
 </style>
 </head>
 <body>
 
-<!-- SCREEN 1: Welcome -->
-<div id="s-welcome" style="min-height:100vh;background:linear-gradient(160deg,#FF6B6B 0%,#FF8E53 40%,#FFD93D 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center">
-  <div style="font-size:80px;margin-bottom:16px;animation:bounce 2s infinite">🌟</div>
-  <h1 style="color:#fff;font-size:36px;font-weight:900;letter-spacing:-1px;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,0.15)">What do you want to be?</h1>
-  <p style="color:rgba(255,255,255,0.92);font-size:18px;margin-bottom:40px;max-width:340px;line-height:1.5">Answer 3 fun questions and discover amazing jobs just for you!</p>
-  <button class="btn" onclick="show('s-q1')" style="background:#fff;color:#FF6B6B;border:none;border-radius:99px;padding:18px 44px;font-size:20px;font-weight:800;box-shadow:0 8px 32px rgba(0,0,0,0.15)">Let's Go! 🚀</button>
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid #E8E8E4;padding:12px 20px;display:flex;align-items:center;justify-content:space-between">
+  <div style="display:flex;align-items:center;gap:10px">
+    <span style="font-size:28px">🚀</span>
+    <div>
+      <div style="font-size:15px;font-weight:800;color:#1A1A1A;line-height:1">GrowUp!</div>
+      <div style="font-size:10px;font-weight:500;color:#888">Career Explorer for Kids</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button class="btn" onclick="showSection('quiz')" style="background:#F0FDF4;color:#16A34A;padding:8px 14px;font-size:12px;border-radius:12px">🎯 Take Quiz</button>
+    <button class="btn" onclick="showSection('dashboard')" style="background:#EFF6FF;color:#2563EB;padding:8px 14px;font-size:12px;border-radius:12px">👨‍👩‍👧 Parents</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="sec-home" style="background:linear-gradient(135deg,#FEF3C7 0%,#DBEAFE 50%,#F3E8FF 100%);padding:48px 20px 40px;text-align:center">
+  <div style="font-size:56px;margin-bottom:12px">🌟</div>
+  <h1 style="font-size:clamp(28px,6vw,52px);font-weight:900;line-height:1.1;color:#1A1A1A;margin-bottom:12px">What do YOU want<br>to be? 🤔</h1>
+  <p style="font-size:clamp(14px,3vw,18px);color:#444;max-width:480px;margin:0 auto 28px;font-weight:500">Explore amazing jobs, take a fun quiz, and discover your perfect future career!</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn" onclick="showSection('quiz')" style="background:linear-gradient(135deg,#F59E0B,#EF4444);color:#fff;padding:16px 32px;font-size:16px;border-radius:20px;box-shadow:0 4px 20px rgba(245,158,11,.4)">🎯 Take the Quiz!</button>
+    <button class="btn" onclick="showSection('careers')" style="background:#1A1A1A;color:#fff;padding:16px 32px;font-size:16px;border-radius:20px">🔍 Explore Careers</button>
+  </div>
+  <div style="margin-top:32px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <div style="background:rgba(255,255,255,.7);border-radius:16px;padding:12px 20px;font-size:13px;font-weight:600;color:#555">✅ 30 Career Profiles</div>
+    <div style="background:rgba(255,255,255,.7);border-radius:16px;padding:12px 20px;font-size:13px;font-weight:600;color:#555">✅ Fun 3-Question Quiz</div>
+    <div style="background:rgba(255,255,255,.7);border-radius:16px;padding:12px 20px;font-size:13px;font-weight:600;color:#555">✅ For Ages 4–9</div>
+  </div>
+</section>
+
+<!-- CAREERS SECTION -->
+<section id="sec-careers" style="display:none;padding:32px 16px 60px">
+  <div style="text-align:center;margin-bottom:28px">
+    <h2 style="font-size:28px;font-weight:900;margin-bottom:6px">Explore All Careers 🔭</h2>
+    <p style="color:#666;font-size:14px">Tap any category to explore amazing jobs!</p>
+  </div>
+
+  <!-- Category Filters -->
+  <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;margin-bottom:24px;-webkit-overflow-scrolling:touch" id="cat-filters">
+    <button class="btn cat-btn active-cat" data-cat="all" onclick="filterCat('all',this)" style="white-space:nowrap;padding:10px 18px;font-size:13px;background:#1A1A1A;color:#fff;border-radius:30px;flex-shrink:0">All Jobs</button>
+    <button class="btn cat-btn" data-cat="builders" onclick="filterCat('builders',this)" style="white-space:nowrap;padding:10px 18px;font-size:13px;background:#FEF3C7;color:#92400E;border-radius:30px;flex-shrink:0">🔨 Builders</button>
+    <button class="btn cat-btn" data-cat="discoverers" onclick="filterCat('discoverers',this)" style="white-space:nowrap;padding:10px 18px;font-size:13px;background:#DBEAFE;color:#1E40AF;border-radius:30px;flex-shrink:0">🔬 Discoverers</button>
+    <button class="btn cat-btn" data-cat="creators" onclick="filterCat('creators',this)" style="white-space:nowrap;padding:10px 18px;font-size:13px;background:#FCE7F3;color:#9D174D;border-radius:30px;flex-shrink:0">🎨 Creators</button>
+    <button class="btn cat-btn" data-cat="helpers" onclick="filterCat('helpers',this)" style="white-space:nowrap;padding:10px 18px;font-size:13px;background:#D1FAE5;color:#065F46;border-radius:30px;flex-shrink:0">🤝 Helpers</button>
+    <button class="btn cat-btn" data-cat="leaders" onclick="filterCat('leaders',this)" style="white-space:nowrap;padding:10px 18px;font-size:13px;background:#FDE68A;color:#78350F;border-radius:30px;flex-shrink:0">⭐ Leaders</button>
+    <button class="btn cat-btn" data-cat="organizers" onclick="filterCat('organizers',this)" style="white-space:nowrap;padding:10px 18px;font-size:13px;background:#E0E7FF;color:#3730A3;border-radius:30px;flex-shrink:0">📋 Organizers</button>
+  </div>
+
+  <!-- Career Grid -->
+  <div id="career-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;max-width:900px;margin:0 auto"></div>
+</section>
+
+<!-- QUIZ SECTION -->
+<section id="sec-quiz" style="display:none;padding:32px 16px 60px;max-width:600px;margin:0 auto">
+  <div id="quiz-start">
+    <div style="text-align:center;margin-bottom:32px">
+      <div style="font-size:64px;margin-bottom:12px">🎯</div>
+      <h2 style="font-size:28px;font-weight:900;margin-bottom:8px">Career Quiz!</h2>
+      <p style="color:#555;font-size:15px">Answer 3 fun questions and discover which job is perfect for YOU!</p>
+    </div>
+    <button class="btn" onclick="startQuiz()" style="width:100%;background:linear-gradient(135deg,#7C3AED,#4F46E5);color:#fff;padding:20px;font-size:18px;border-radius:20px">Let's Go! 🚀</button>
+  </div>
+
+  <div id="quiz-questions" style="display:none">
+    <div id="q-progress" style="margin-bottom:24px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span id="q-label" style="font-size:13px;font-weight:600;color:#888">Question 1 of 3</span>
+        <span id="q-emoji" style="font-size:24px">🤔</span>
+      </div>
+      <div style="background:#E8E8E4;border-radius:10px;height:8px">
+        <div id="q-bar" style="background:linear-gradient(135deg,#7C3AED,#4F46E5);height:8px;border-radius:10px;transition:width .4s;width:0%"></div>
+      </div>
+    </div>
+    <h3 id="q-text" style="font-size:22px;font-weight:800;margin-bottom:24px;line-height:1.3"></h3>
+    <div id="q-options" style="display:flex;flex-direction:column;gap:12px"></div>
+  </div>
+
+  <div id="quiz-result" style="display:none;text-align:center">
+    <div style="font-size:72px;margin-bottom:16px" id="result-emoji"></div>
+    <h2 style="font-size:26px;font-weight:900;margin-bottom:8px">You're a <span id="result-cat"></span>!</h2>
+    <p style="color:#555;font-size:15px;margin-bottom:24px" id="result-desc"></p>
+    <div id="result-careers" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <button class="btn" onclick="resetQuiz()" style="background:#F3F4F6;color:#1A1A1A;padding:14px 24px;font-size:14px;border-radius:16px">🔄 Try Again</button>
+      <button class="btn" onclick="showSection('careers')" style="background:#1A1A1A;color:#fff;padding:14px 24px;font-size:14px;border-radius:16px">🔍 Explore All Careers</button>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD SECTION -->
+<section id="sec-dashboard" style="display:none;padding:32px 16px 60px;max-width:700px;margin:0 auto">
+  <div style="text-align:center;margin-bottom:32px">
+    <div style="font-size:48px;margin-bottom:10px">👨‍👩‍👧</div>
+    <h2 style="font-size:26px;font-weight:900;margin-bottom:6px">Parent Dashboard</h2>
+    <p style="color:#666;font-size:14px">See what careers your child is exploring</p>
+  </div>
+
+  <!-- Trial Banner -->
+  <div style="background:linear-gradient(135deg,#7C3AED,#4F46E5);border-radius:20px;padding:24px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden">
+    <div style="position:absolute;right:-20px;top:-20px;font-size:80px;opacity:.15">⭐</div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:1px;opacity:.8;margin-bottom:6px">FREE TRIAL — 6 DAYS LEFT</div>
+    <div style="font-size:20px;font-weight:800;margin-bottom:4px">Upgrade to GrowUp! Pro</div>
+    <div style="font-size:13px;opacity:.85;margin-bottom:16px">Unlimited career profiles, detailed quiz insights, and progress tracking for all your kids.</div>
+    <button class="btn" style="background:#fff;color:#7C3AED;padding:12px 24px;font-size:14px;border-radius:14px">Start for $4.99/mo →</button>
+  </div>
+
+  <!-- Stats Row -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px">
+    <div style="background:#F0FDF4;border-radius:16px;padding:16px;text-align:center">
+      <div style="font-size:28px;font-weight:900;color:#16A34A" id="dash-explored">0</div>
+      <div style="font-size:11px;color:#666;font-weight:600;margin-top:2px">Careers Explored</div>
+    </div>
+    <div style="background:#EFF6FF;border-radius:16px;padding:16px;text-align:center">
+      <div style="font-size:28px;font-weight:900;color:#2563EB" id="dash-quiz">0</div>
+      <div style="font-size:11px;color:#666;font-weight:600;margin-top:2px">Quizzes Taken</div>
+    </div>
+    <div style="background:#FEF3C7;border-radius:16px;padding:16px;text-align:center">
+      <div style="font-size:28px;font-weight:900;color:#D97706" id="dash-fav">—</div>
+      <div style="font-size:11px;color:#666;font-weight:600;margin-top:2px">Top Interest</div>
+    </div>
+  </div>
+
+  <!-- Recent Activity -->
+  <div style="background:#FAFAFA;border:1px solid #E8E8E4;border-radius:20px;padding:20px;margin-bottom:20px">
+    <h3 style="font-size:15px;font-weight:800;margin-bottom:16px">📊 Quiz Results</h3>
+    <div id="dash-results">
+      <div style="text-align:center;padding:24px;color:#999;font-size:13px">No quizzes taken yet. Have your child take the quiz! 🎯</div>
+    </div>
+  </div>
+
+  <!-- Explored Careers -->
+  <div style="background:#FAFAFA;border:1px solid #E8E8E4;border-radius:20px;padding:20px">
+    <h3 style="font-size:15px;font-weight:800;margin-bottom:16px">🔍 Careers Your Child Viewed</h3>
+    <div id="dash-viewed">
+      <div style="text-align:center;padding:24px;color:#999;font-size:13px">No careers explored yet. Let them start exploring! 🚀</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER MODAL -->
+<div id="career-modal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);padding:20px;overflow-y:auto" onclick="closeModal(event)">
+  <div id="modal-content" style="background:#fff;border-radius:28px;max-width:480px;margin:40px auto;padding:32px;position:relative" onclick="event.stopPropagation()">
+    <button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:#F3F4F6;border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+    <div id="modal-body"></div>
+  </div>
 </div>
 
-<!-- SCREEN 2: Q1 -->
-<div id="s-q1" class="hidden" style="min-height:100vh;display:flex;flex-direction:column;padding:32px 24px;max-width:520px;margin:0 auto;width:100%">
-  <div style="display:flex;gap:8px;margin-bottom:32px">
-    <div style="height:8px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:8px;flex:1;background:#E8E8E4;border-radius:99px"></div>
-    <div style="height:8px;flex:1;background:#E8E8E4;border-radius:99px"></div>
-  </div>
-  <div style="font-size:52px;margin-bottom:16px">🤔</div>
-  <h2 style="font-size:26px;font-weight:800;color:#1A1A1A;margin-bottom:8px;letter-spacing:-0.5px">What do you love doing most?</h2>
-  <p style="color:#888;font-size:15px;margin-bottom:28px">Pick your favourite!</p>
-  <div style="display:flex;flex-direction:column;gap:12px">
-    <button class="ans-btn" onclick="pickQ1('art')"><span style="font-size:28px">🎨</span><div><div>Drawing and making things</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Art, crafts, building</div></div></button>
-    <button class="ans-btn" onclick="pickQ1('science')"><span style="font-size:28px">🔬</span><div><div>Doing experiments and asking why</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Science, experiments, nature</div></div></button>
-    <button class="ans-btn" onclick="pickQ1('help')"><span style="font-size:28px">🤝</span><div><div>Helping people and animals</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Caring, teamwork, kindness</div></div></button>
-    <button class="ans-btn" onclick="pickQ1('build')"><span style="font-size:28px">🏗️</span><div><div>Building and fixing things</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Lego, tools, machines</div></div></button>
-  </div>
-</div>
+<!-- BOTTOM NAV -->
+<nav style="position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #E8E8E4;padding:8px 0 12px;display:flex;justify-content:space-around;z-index:100">
+  <button class="btn" onclick="showSection('home')" style="background:none;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 16px;border-radius:12px;font-size:11px;color:#888;font-weight:600" id="nav-home">
+    <span style="font-size:22px">🏠</span>Home
+  </button>
+  <button class="btn" onclick="showSection('careers')" style="background:none;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 16px;border-radius:12px;font-size:11px;color:#888;font-weight:600" id="nav-careers">
+    <span style="font-size:22px">🔍</span>Explore
+  </button>
+  <button class="btn" onclick="showSection('quiz')" style="background:none;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 16px;border-radius:12px;font-size:11px;color:#888;font-weight:600" id="nav-quiz">
+    <span style="font-size:22px">🎯</span>Quiz
+  </button>
+  <button class="btn" onclick="showSection('dashboard')" style="background:none;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 16px;border-radius:12px;font-size:11px;color:#888;font-weight:600" id="nav-dashboard">
+    <span style="font-size:22px">👨‍👩‍👧</span>Parents
+  </button>
+</nav>
 
-<!-- SCREEN 3: Q2 -->
-<div id="s-q2" class="hidden" style="min-height:100vh;display:flex;flex-direction:column;padding:32px 24px;max-width:520px;margin:0 auto;width:100%">
-  <div style="display:flex;gap:8px;margin-bottom:32px">
-    <div style="height:8px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:8px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:8px;flex:1;background:#E8E8E4;border-radius:99px"></div>
-  </div>
-  <div style="font-size:52px;margin-bottom:16px">🌍</div>
-  <h2 style="font-size:26px;font-weight:800;color:#1A1A1A;margin-bottom:8px;letter-spacing:-0.5px">Where would you love to work?</h2>
-  <p style="color:#888;font-size:15px;margin-bottom:28px">Pick your dream place!</p>
-  <div style="display:flex;flex-direction:column;gap:12px">
-    <button class="ans-btn" onclick="pickQ2('outside')"><span style="font-size:28px">🌳</span><div><div>Outside in nature</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Parks, oceans, forests</div></div></button>
-    <button class="ans-btn" onclick="pickQ2('stage')"><span style="font-size:28px">🎭</span><div><div>On a stage or in a studio</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Performing, creating, sharing</div></div></button>
-    <button class="ans-btn" onclick="pickQ2('people')"><span style="font-size:28px">🏥</span><div><div>With lots of people</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Schools, hospitals, teams</div></div></button>
-    <button class="ans-btn" onclick="pickQ2('lab')"><span style="font-size:28px">🔭</span><div><div>In a lab or workshop</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Gadgets, experiments, inventions</div></div></button>
-  </div>
-</div>
-
-<!-- SCREEN 4: Q3 -->
-<div id="s-q3" class="hidden" style="min-height:100vh;display:flex;flex-direction:column;padding:32px 24px;max-width:520px;margin:0 auto;width:100%">
-  <div style="display:flex;gap:8px;margin-bottom:32px">
-    <div style="height:8px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:8px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-    <div style="height:8px;flex:1;background:#FF6B6B;border-radius:99px"></div>
-  </div>
-  <div style="font-size:52px;margin-bottom:16px">⚡</div>
-  <h2 style="font-size:26px;font-weight:800;color:#1A1A1A;margin-bottom:8px;letter-spacing:-0.5px">What's your superpower?</h2>
-  <p style="color:#888;font-size:15px;margin-bottom:28px">Almost done — what are you best at?</p>
-  <div style="display:flex;flex-direction:column;gap:12px">
-    <button class="ans-btn" onclick="showResult('artist')"><span style="font-size:28px">✨</span><div><div>Making beautiful things</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Creativity and imagination</div></div></button>
-    <button class="ans-btn" onclick="showResult('doctor')"><span style="font-size:28px">💊</span><div><div>Making people feel better</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Caring and helping</div></div></button>
-    <button class="ans-btn" onclick="showResult('engineer')"><span style="font-size:28px">⚙️</span><div><div>Figuring out how things work</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Problem solving and building</div></div></button>
-    <button class="ans-btn" onclick="showResult('scientist')"><span style="font-size:28px">🔬</span><div><div>Discovering new things</div><div style="font-size:13px;color:#888;font-weight:400;margin-top:2px">Curiosity and exploring</div></div></button>
-  </div>
-</div>
-
-<!-- SCREEN 5: Result -->
-<div id="s-result" class="hidden" style="min-height:100vh;padding:32px 24px;max-width:520px;margin:0 auto;width:100%">
-  <div id="result-hero" style="border-radius:28px;padding:32px 28px;text-align:center;margin-bottom:24px">
-    <div id="result-emoji" style="font-size:72px;margin-bottom:16px"></div>
-    <h2 id="result-title" style="font-size:28px;font-weight:900;letter-spacing:-0.5px;margin-bottom:12px"></h2>
-    <p id="result-desc" style="font-size:16px;line-height:1.6;opacity:0.85"></p>
-  </div>
-
-  <h3 style="font-size:17px;font-weight:800;color:#1A1A1A;margin-bottom:14px">🎯 Jobs you might love:</h3>
-  <div id="result-jobs" style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px"></div>
-
-  <button class="btn" onclick="restart()" style="width:100%;background:#1A1A1A;color:#fff;border:none;border-radius:18px;padding:18px;font-size:17px;font-weight:700">🔄 Try Again!</button>
-</div>
-
-<style>
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-</style>
+<div style="height:80px"></div>
 
 <script>
-var RESULTS={
-  artist:{emoji:"🎨",title:"You could be an Artist!",color:"#FF6B6B",bg:"#FFF0F0",desc:"You love making beautiful things! Artists paint, draw comics, design video games, and create movies. Every cartoon, toy, and book cover was made by an artist!",
-    jobs:[{e:"🎬",n:"Animator",d:"Make cartoon characters move and come alive!"},{e:"🎮",n:"Game Designer",d:"Create the levels and worlds in video games!"},{e:"📚",n:"Book Illustrator",d:"Draw the pictures in children's books!"}]},
-  doctor:{emoji:"👨‍⚕️",title:"You could be a Doctor!",color:"#4ECDC4",bg:"#F0FFFE",desc:"You love helping people feel better! Doctors and nurses take care of sick people and even help animals. Helping others is one of the most important jobs in the world!",
-    jobs:[{e:"🏥",n:"Pediatrician",d:"A doctor just for kids — like you!"},{e:"🐾",n:"Veterinarian",d:"Help sick animals feel better!"},{e:"🦷",n:"Dentist",d:"Keep everyone's teeth healthy and bright!"}]},
-  engineer:{emoji:"⚙️",title:"You could be an Engineer!",color:"#FF8E53",bg:"#FFF5F0",desc:"You love building and fixing things! Engineers design bridges, build robots, make apps, and even design roller coasters. If you can imagine it, engineers can build it!",
-    jobs:[{e:"🤖",n:"Robotics Engineer",d:"Build actual robots that move and think!"},{e:"🚀",n:"Aerospace Engineer",d:"Design rockets and spaceships!"},{e:"🏗️",n:"Architect",d:"Design houses, schools, and skyscrapers!"}]},
-  scientist:{emoji:"🔬",title:"You could be a Scientist!",color:"#A78BFA",bg:"#F5F0FF",desc:"You love asking questions and finding answers! Scientists explore the ocean, study animals, look at stars, and discover new medicines. The world needs curious people like you!",
-    jobs:[{e:"🌊",n:"Marine Biologist",d:"Study dolphins, sharks, and coral reefs!"},{e:"🦕",n:"Paleontologist",d:"Dig up dinosaur bones and learn about the past!"},{e:"🌍",n:"Astronomer",d:"Study stars, planets, and the universe!"}]}
-};
-
-function show(id){
-  ["s-welcome","s-q1","s-q2","s-q3","s-result"].forEach(function(s){
-    var el=document.getElementById(s);
-    if(el){el.classList.add("hidden")}
-  });
-  document.getElementById(id).classList.remove("hidden");
-  window.scrollTo(0,0);
-}
-
-function pickQ1(v){window._q1=v;show("s-q2")}
-function pickQ2(v){window._q2=v;show("s-q3")}
-
-function showResult(type){
-  var r=RESULTS[type];
-  var hero=document.getElementById("result-hero");
-  hero.style.background=r.bg;
-  hero.style.color=r.color;
-  document.getElementById("result-emoji").textContent=r.emoji;
-  document.getElementById("result-title").textContent=r.title;
-  document.getElementById("result-title").style.color=r.color;
-  document.getElementById("result-desc").textContent=r.desc;
-  document.getElementById("result-desc").style.color=r.color;
-  var bgs=["#FFF0F4","#F0FFFE","#FFF5F0","#F5F0FF"];
-  document.getElementById("result-jobs").innerHTML=r.jobs.map(function(j,i){
-    return"<div style=\"background:"+bgs[i%4]+";border-radius:18px;padding:18px 20px;display:flex;align-items:center;gap:16px\"><span style=\"font-size:36px\">"+j.e+"</span><div><div style=\"font-size:16px;font-weight:700;color:#1A1A1A\">"+j.n+"</div><div style=\"font-size:13px;color:#888;margin-top:3px\">"+j.d+"</div></div></div>";
-  }).join("");
-  show("s-result");
-}
-
-function restart(){show("s-welcome")}
-</script>
+const CAREERS = [
+  // BUILDERS
+  {id:'wind',cat:'builders',emoji:'🌬️',name:'Wind Turbine Technician',short:'You climb giant wind turbines and fix them so they can make electricity from the wind!',future:true,salary:'$60k/yr',color:'#FEF3C7',accent:'#92400E',detail:'Wind turbine technicians are like superheroes for clean energy! You climb towers as tall as a 20-story building, fix big spinning blades, and help power thousands of homes. You get to work outside in amazing places and keep our planet green!'},
+  {id:'elec',cat:'builders',emoji:'⚡',name:'Electrician',short:'You make sure lights turn on, TVs work, and everything gets power in homes and buildings!',future:false,salary:'$60k/yr',color:'#FEF3C7',accent:'#92400E',detail:'Electricians are the reason your lights work! You install wires, fix outlets, and make sure everything is safe. Every new house or building needs an electrician, so there is always plenty of exciting work to do!'},
+  {id:'fire',cat:'builders',emoji:'🚒',name:'Firefighter',short:'You rush to put out fires and rescue people when they need help — you are a real-life hero!',future:false,salary:'$56k/yr',color:'#FEF3C7',accent:'#92400E',detail:'Firefighters are brave heroes who run into danger to help others. You drive the big red truck, use powerful hoses, and save lives. You also teach people how to stay safe and prevent fires from starting!'},
+  {id:'chef',cat:'builders',emoji:'👨‍🍳',name:'Chef',short:'You cook delicious meals and create yummy recipes that make people very happy!',future:false,salary:'$55k/yr',color:'#FEF3C7',accent:'#92400E',detail:'Chefs are food artists! You create amazing recipes, cook in busy kitchens, and make people smile with delicious meals. From pizza to fancy desserts, chefs get to be creative every single day!'},
+  {id:'pilot',cat:'builders',emoji:'✈️',name:'Pilot',short:'You fly airplanes high in the sky and take people on adventures to faraway places!',future:false,salary:'$130k/yr',color:'#FEF3C7',accent:'#92400E',detail:'Pilots sit in the cockpit and fly planes across cities, oceans, and mountains. You use lots of cool buttons and instruments to navigate. Passengers trust you to get them safely to their destinations — what an adventure!'},
+  {id:'plumber',cat:'builders',emoji:'🔧',name:'Plumber',short:'You fix pipes so clean water comes out of faucets and goes where it needs to go!',future:false,salary:'$60k/yr',color:'#FEF3C7',accent:'#92400E',detail:'Plumbers make sure water works in every home and building. You fix leaks, install showers, and make sure everything flows properly. Without plumbers, we would not have running water — so your job is super important!'},
+  // DISCOVERERS
+  {id:'datascientist',cat:'discoverers',emoji:'📊',name:'Data Scientist',short:'You look at millions of numbers and find hidden patterns that help people make smart decisions!',future:true,salary:'$108k/yr',color:'#DBEAFE',accent:'#1E40AF',detail:'Data scientists are like detectives for numbers! You use computers and math to find hidden stories inside huge amounts of data. Companies use your discoveries to make better products and solve big problems. It is like solving a giant puzzle every day!'},
+  {id:'marine',cat:'discoverers',emoji:'🐬',name:'Marine Biologist',short:'You study fish, dolphins, and all the amazing animals living deep in the ocean!',future:false,salary:'$64k/yr',color:'#DBEAFE',accent:'#1E40AF',detail:'Marine biologists explore the underwater world! You dive in the ocean, study sea creatures, and help protect coral reefs and dolphins. You might discover a new fish species or help save sea turtles from extinction — how cool is that?'},
+  {id:'forensic',cat:'discoverers',emoji:'🔍',name:'Forensic Scientist',short:'You help solve mysteries by studying clues left at crime scenes — just like a TV detective!',future:true,salary:'$63k/yr',color:'#DBEAFE',accent:'#1E40AF',detail:'Forensic scientists are real-life detectives! You work in a lab, examine fingerprints, DNA, and other clues to help solve crimes. Your work helps police find out what really happened and makes sure the right people are held responsible!'},
+  {id:'robotics',cat:'discoverers',emoji:'🤖',name:'Robotics Engineer',short:'You design and build robots that can do amazing things like explore space or help in hospitals!',future:true,salary:'$100k/yr',color:'#DBEAFE',accent:'#1E40AF',detail:'Robotics engineers are builders of the future! You design robots that can do surgeries, explore other planets, or work in factories. You mix engineering, coding, and creativity to bring your robot ideas to life. The robots you build today will change tomorrow!'},
+  {id:'software',cat:'discoverers',emoji:'💻',name:'Software Developer',short:'You write the instructions that tell computers, phones, and apps exactly what to do!',future:false,salary:'$120k/yr',color:'#DBEAFE',accent:'#1E40AF',detail:'Software developers create the apps and websites you use every day! You write code — special instructions computers understand — to build games, apps, and websites. If you can imagine it, you can code it!'},
+  // CREATORS
+  {id:'gamedesigner',cat:'creators',emoji:'🎮',name:'Video Game Designer',short:'You create the rules, stories, and fun stuff inside video games for people to enjoy!',future:true,salary:'$78k/yr',color:'#FCE7F3',accent:'#9D174D',detail:'Video game designers are the imagination behind your favorite games! You decide how the game works, what the story is, what the characters look like, and how to make it super fun. You get to play games for your job — and make new ones too!'},
+  {id:'animator',cat:'creators',emoji:'🎬',name:'Animator',short:'You draw characters and make them move so they feel alive in movies and cartoons!',future:false,salary:'$77k/yr',color:'#FCE7F3',accent:'#9D174D',detail:'Animators bring drawings to life! You create the characters in movies, cartoons, and video games, making them walk, jump, laugh, and cry. Using special computer programs, you can create entire magical worlds full of amazing creatures!'},
+  {id:'architect',cat:'creators',emoji:'🏛️',name:'Architect',short:'You design beautiful buildings like houses, schools, and skyscrapers before they are built!',future:false,salary:'$93k/yr',color:'#FCE7F3',accent:'#9D174D',detail:'Architects design amazing buildings! Before any building is constructed, an architect draws plans showing exactly how it will look. You think about how people will use the space, how to make it beautiful, and how to keep it safe. Every building you see was designed by an architect!'},
+  {id:'photo',cat:'creators',emoji:'📸',name:'Photographer',short:'You take beautiful pictures of people, animals, and places that capture special moments forever!',future:false,salary:'$40k/yr',color:'#FCE7F3',accent:'#9D174D',detail:'Photographers capture magic moments! You use a camera to take beautiful pictures at weddings, sports events, wildlife safaris, and news stories. A great photograph can tell an entire story without a single word and last for hundreds of years!'},
+  {id:'fashion',cat:'creators',emoji:'👗',name:'Fashion Designer',short:'You design cool clothes and decide what colors, shapes, and styles people will wear!',future:false,salary:'$77k/yr',color:'#FCE7F3',accent:'#9D174D',detail:'Fashion designers are clothing artists! You sketch outfits, choose fabrics, and create clothes that make people feel amazing. You might design everyday outfits, fancy dresses, or even costumes for movies. Your creations could one day be worn all over the world!'},
+  // HELPERS
+  {id:'nurse',cat:'helpers',emoji:'👩‍⚕️',name:'Nurse Practitioner',short:'You take care of sick people, give them medicine, and help them get healthy and strong!',future:true,salary:'$120k/yr',color:'#D1FAE5',accent:'#065F46',detail:'Nurse practitioners are healthcare heroes! You examine patients, figure out what is wrong, and prescribe medicine to help them get better. You work in hospitals, clinics, and schools, making sure everyone stays as healthy as possible. People count on you every single day!'},
+  {id:'teacher',cat:'helpers',emoji:'📚',name:'Teacher',short:'You help kids learn amazing things every day and make school fun and exciting!',future:false,salary:'$62k/yr',color:'#D1FAE5',accent:'#065F46',detail:'Teachers are the most important people in the world! You help children learn to read, do math, explore science, and understand history. You make learning exciting and fun. The best teachers inspire their students to love learning forever — even after they grow up!'},
+  {id:'vet',cat:'helpers',emoji:'🐾',name:'Veterinarian',short:'You are a doctor for animals — you help dogs, cats, horses, and all kinds of creatures feel better!',future:false,salary:'$119k/yr',color:'#D1FAE5',accent:'#065F46',detail:'Veterinarians are animal doctors! You give check-ups to pets, treat sick animals, and perform surgeries when needed. You might work with tiny hamsters or giant horses. Animals cannot tell you where it hurts, so you have to be a great detective too!'},
+  {id:'speech',cat:'helpers',emoji:'🗣️',name:'Speech Therapist',short:'You help people who have trouble talking or swallowing learn to communicate better!',future:false,salary:'$85k/yr',color:'#D1FAE5',accent:'#065F46',detail:'Speech therapists help people find their voice! You work with kids who stutter, adults who had a stroke, and anyone who struggles to communicate. Through fun exercises and games, you help people speak clearly and confidently so they can share their thoughts with the world!'},
+  {id:'social',cat:'helpers',emoji:'🤲',name:'Social Worker',short:'You help families and kids who are having a hard time by connecting them to the help they need!',future:false,salary:'$58k/yr',color:'#D1FAE5',accent:'#065F46',detail:'Social workers are everyday heroes who help people through tough times. You connect families with food, housing, and healthcare. You support children who need a safe home and help adults through hard situations. Your kindness genuinely changes lives!'},
+  {id:'dentist',cat:'helpers',emoji:'🦷',name:'Dentist',short:'You make sure teeth
 </body>
 </html>
